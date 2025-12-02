@@ -94,15 +94,16 @@ else
         }
         using var context = DbFactory.CreateDbContext();
 
-        Customer.UpdatedBy = userId;
-        Customer.DateUpdated = DateTime.Now;
-
         Customer ??= await context.Customer.FirstOrDefaultAsync(m => m.Id == Id);
-
         if (Customer is null)
         {
             NavigationManager.NavigateTo("notfound");
         }
+        Customer.UpdatedBy = userId;
+        Customer.DateUpdated = DateTime.Now;
+
+
+     
     }
 
     // To protect from overposting attacks, enable the specific properties you want to bind to.
