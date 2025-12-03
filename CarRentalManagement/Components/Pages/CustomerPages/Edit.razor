@@ -44,7 +44,7 @@ else
                 </div>
                 <div class="mb-3" hidden>
                     <label for="datecreated" class="form-label">DateCreated:</label>
-                    <InputDate id="datecreated" @bind-Value="Customer.DateCreated" class="form-control" />
+                    <InputDate id="datecreated" Type="InputDateType.DateTimeLocal" @bind-Value="Customer.DateCreated" class="form-control" />
                     <ValidationMessage For="() => Customer.DateCreated" class="text-danger" />
                 </div>
                 <div class="mb-3" hidden>
